@@ -1,1 +1,1 @@
-# Pyqt_project
+# Папка src
