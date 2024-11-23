@@ -1,13 +1,12 @@
 import sys
-from window_with_instruction import Inst
+from main_menu import Ui_MainMenu
+from window_with_instruction import Instruction
 from game import Game_window
-from main_menu import Ui_MainWindow
-import io
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtWidgets import QApplication, QLabel, QMainWindow
 
 
-class Main(QMainWindow, Ui_MainWindow):
+class Main(QMainWindow, Ui_MainMenu):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
@@ -24,7 +23,7 @@ class Main(QMainWindow, Ui_MainWindow):
         self.game.show()
 
     def go_instruction(self):
-        self.instruction = Inst()
+        self.instruction = Instruction()
         self.instruction.show()
 
 
