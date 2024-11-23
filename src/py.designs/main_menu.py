@@ -1,47 +1,48 @@
-import io
-import sys
-from PyQt6 import uic 
-from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6 import QtCore, QtWidgets
 
 
-class Ui_Form(object):
-    def setupUi(self, Form):
-        Form.setObjectName("Form")
-        Form.resize(992, 818)
-        Form.setStyleSheet("")
-        self.label = QtWidgets.QLabel(parent=Form)
-        self.label.setGeometry(QtCore.QRect(0, 0, 1011, 821))
-        self.label.setStyleSheet("border-image: url(:/pictures/main_menu.jpg);")
-        self.label.setText("")
-        self.label.setObjectName("label")
-        self.pushButton = QtWidgets.QPushButton(parent=Form)
-        self.pushButton.setGeometry(QtCore.QRect(240, 290, 531, 101))
-        self.pushButton.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+class Ui_MainMenu(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(764, 756)
+        self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.label_2 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(130, 160, 521, 71))
+        self.label_2.setStyleSheet("font: 36pt \"MS Shell Dlg 2\";\n"
+"color: rgb(255, 255, 255);")
+        self.label_2.setObjectName("label_2")
+        self.starting = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.starting.setGeometry(QtCore.QRect(100, 300, 531, 101))
+        self.starting.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "\n"
 "font: 26pt \"MS Shell Dlg 2\";\n"
 "border-color: rgb(0, 0, 0);\n"
 "")
-        self.pushButton.setObjectName("pushButton")
-        self.pushButton_2 = QtWidgets.QPushButton(parent=Form)
-        self.pushButton_2.setGeometry(QtCore.QRect(240, 410, 531, 101))
-        self.pushButton_2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+        self.starting.setObjectName("starting")
+        self.instructions = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.instructions.setGeometry(QtCore.QRect(100, 430, 531, 101))
+        self.instructions.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "font: 26pt \"MS Shell Dlg 2\";\n"
 "border-color: rgb(0, 0, 0);")
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.label_2 = QtWidgets.QLabel(parent=Form)
-        self.label_2.setGeometry(QtCore.QRect(270, 140, 521, 71))
-        self.label_2.setStyleSheet("font: 36pt \"MS Shell Dlg 2\";\n"
-"color: rgb(255, 255, 255);")
-        self.label_2.setObjectName("label_2")
+        self.instructions.setObjectName("instructions")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 764, 26))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def retranslateUi(self, Form):
+    def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
-        self.pushButton.setText(_translate("Form", "Начать игру"))
-        self.pushButton_2.setText(_translate("Form", "Инструкция"))
-        self.label_2.setText(_translate("Form", "ГЛАВНОЕ МЕНЮ"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.label_2.setText(_translate("MainWindow", "ГЛАВНОЕ МЕНЮ"))
+        self.starting.setText(_translate("MainWindow", "Начать игру"))
+        self.instructions.setText(_translate("MainWindow", "Инструкция"))
 
 
