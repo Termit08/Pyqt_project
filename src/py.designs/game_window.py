@@ -1,7 +1,7 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
-class Ui_MainWindow(object):
+class Ui_GameWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(872, 773)
@@ -37,12 +37,12 @@ class Ui_MainWindow(object):
         self.labe.setFont(font)
         self.labe.setStyleSheet("color: rgb(255, 255, 255);")
         self.labe.setObjectName("labe")
-        self.pushButton = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(600, 690, 191, 21))
-        self.pushButton.setStyleSheet("background-color: rgb(212, 224, 255);")
-        self.pushButton.setObjectName("pushButton")
+        self.confirm_button = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.confirm_button.setGeometry(QtCore.QRect(600, 690, 191, 21))
+        self.confirm_button.setStyleSheet("background-color: rgb(212, 224, 255);")
+        self.confirm_button.setObjectName("pushButton")
         self.choice = QtWidgets.QDialogButtonBox(parent=self.centralwidget)
-        self.choice.setGeometry(QtCore.QRect(570, 640, 221, 61))
+        self.choice.setGeometry(QtCore.QRect(570, 640, 221, 41))
         self.choice.setStyleSheet("background-color: rgb(212, 224, 255);")
         self.choice.setStandardButtons(QtWidgets.QDialogButtonBox.StandardButton.Cancel|QtWidgets.QDialogButtonBox.StandardButton.Ok)
         self.choice.setObjectName("choice")
@@ -200,9 +200,11 @@ class Ui_MainWindow(object):
         self.label_5.setText(_translate("MainWindow", " Номер вашей коробки:"))
         self.label_3.setText(_translate("MainWindow", "Возможные суммы выигрыша"))
         self.labe.setText(_translate("MainWindow", "Номера оставшихся коробок"))
-        self.pushButton.setText(_translate("MainWindow", "Подтвердить"))
+        self.confirm_button.setText(_translate("MainWindow", "Подтвердить"))
         self.next_turn.setText(_translate("MainWindow", "Следующий ход"))
         self.label_7.setText(_translate("MainWindow", "Cумма выигрыша:"))
         self.label_4.setText(_translate("MainWindow", "Банкир"))
+        self.give_number.setText(_translate("MainWindow", "Выдать номер"))
+        self.label_6.setText(_translate("MainWindow", "Сумма, которая выбывает:"))
         self.give_number.setText(_translate("MainWindow", "Выдать число"))
         self.label_6.setText(_translate("MainWindow", "Сумма, которая выбывает:"))
