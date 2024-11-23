@@ -6,12 +6,9 @@ from PyQt6.QtWidgets import QApplication, QLabel, QMainWindow
 SCREEN_SIZE = [600, 700]
 
 
-class Inst(QMainWindow):
+class Instruction(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.initUI()
-
-    def initUI(self):
         self.setGeometry(0, 0, *SCREEN_SIZE)
         self.setWindowTitle('Отображение картинки')
 
@@ -24,6 +21,6 @@ class Inst(QMainWindow):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    ex = Inst()
+    ex = Instruction()
     ex.show()
     sys.exit(app.exec())
