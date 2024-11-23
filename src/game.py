@@ -1,7 +1,7 @@
 import sys
 
 import random
-from Game_window import Ui_GameWindow
+from game_window import Ui_GameWindow
 from PyQt6.QtWidgets import QApplication, QMainWindow
 
 
