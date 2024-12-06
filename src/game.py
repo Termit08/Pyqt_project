@@ -32,12 +32,12 @@ class Game_window(QMainWindow, Ui_GameWindow):
         self.bankers_functions = [self.offer, self.change]
         self.turn_number = 0
         self.rejected_changes = 0
-        self.dicti_with_sum_for_statistics = {}
         self.choice_for_offer.setEnabled(False)
         self.choice_for_change.setEnabled(False)
         self.choice_for_change.hide()
         self.give_number.clicked.connect(self.random_number)
         self.next_turn.clicked.connect(self.turn)
+        self.dicti_with_sum_for_statistics = {key: value for key, value in self.dict_with_sum.items()}
 
     def random_number(self):
         for i in self.sum:
@@ -115,7 +115,6 @@ class Game_window(QMainWindow, Ui_GameWindow):
         self.choice_for_offer.setEnabled(False)
 
     def banker(self):
-        print(self.rejected_changes)
         self.bank.clear()
         self.next_turn.setEnabled(False)
         for i in self.buttons:
@@ -180,28 +179,21 @@ class Game_window(QMainWindow, Ui_GameWindow):
         self.win_sum.setText(self.lis_sum_possible[0])
 
     def go_dictionary(self):
-        self.dictionary = Dictionary()
+        self.dictionary = Dictionary(self.dicti_with_sum_for_statistics)
         self.dictionary.show()
 
 
 class Dictionary(QMainWindow, Ui_DictionaryWindow):
-    def __init__(self):
-        super().__init__()
-        self.dictionary = {}
-        self.setupUi(self)
-        self.class_game_window = Game_window()
-        self.show_button.clicked.connect(self.show_dictionary)
+    def __init__(self, dict_fron_game_window):
+            super().__init__()
+            self.dict_from_game_window = dict_fron_game_window
+            self.setupUi(self)
+            self.show_button.clicked.connect(self.show_dictionary)
 
     def show_dictionary(self):
-        self.dictionary = self.class_game_window.dicti_with_sum_for_statistics
-        for key in self.dictionary.keys():
+        dict_from_game_window = self.dict_from_game_window
+        for key in dict_from_game_window.keys():
             self.numbers.append(key)
-        for value in self.dictionary.values():
+        for value in dict_from_game_window.values():
             self.sums.append(value)
-
-
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    ex = Game_window()
-    ex.show()
-    sys.exit(app.exec())
+        self.show_button.setEnabled(False)
