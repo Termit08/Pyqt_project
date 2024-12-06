@@ -1,4 +1,5 @@
 import sys
+sys.path.append('./src.py.designs')
 from main_menu import Ui_MainMenu
 from window_with_instruction import Instruction
 from game import Game_window
