@@ -3,7 +3,7 @@ sys.path.append('./src.py.designs')
 import random
 from game_window import Ui_GameWindow
 from dictionary_window import Ui_DictionaryWindow
-from PyQt6.QtWidgets import QApplication, QMainWindow
+from PyQt6.QtWidgets import QMainWindow
 
 
 class Game_window(QMainWindow, Ui_GameWindow):
@@ -80,6 +80,21 @@ class Game_window(QMainWindow, Ui_GameWindow):
             if self.turn_number < 100:
                 self.game_over()
         
+    def banker(self):
+        self.bank.clear()
+        self.next_turn.setEnabled(False)
+        for i in self.buttons:
+            i.setEnabled(False)
+        bankers_turn = random.choice(self.bankers_functions)
+        if bankers_turn == self.offer or (bankers_turn == self.change and (self.check_count_changes >= 2 or self.rejected_changes > 1)):
+            self.choice_for_offer.show()
+            self.choice_for_change.hide()
+            self.offer()
+        elif bankers_turn == self.change:
+            self.choice_for_offer.hide()
+            self.choice_for_change.show()
+            self.change()
+        
     def offer(self):
         self.choice_for_offer.setEnabled(True)
         self.bank.addItem('ПРЕДЛОЖЕНИЕ СУММЫ')
@@ -113,21 +128,6 @@ class Game_window(QMainWindow, Ui_GameWindow):
             i.setEnabled(True)
         self.next_turn.setEnabled(True)
         self.choice_for_offer.setEnabled(False)
-
-    def banker(self):
-        self.bank.clear()
-        self.next_turn.setEnabled(False)
-        for i in self.buttons:
-            i.setEnabled(False)
-        bankers_turn = random.choice(self.bankers_functions)
-        if bankers_turn == self.offer or (bankers_turn == self.change and (self.check_count_changes >= 2 or self.rejected_changes > 1)):
-            self.choice_for_offer.show()
-            self.choice_for_change.hide()
-            self.offer()
-        elif bankers_turn == self.change:
-            self.choice_for_offer.hide()
-            self.choice_for_change.show()
-            self.change()
 
     def change(self):
         self.check_count_changes += 1
