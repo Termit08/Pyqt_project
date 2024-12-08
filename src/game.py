@@ -1,8 +1,6 @@
-import sys
-sys.path.append('./src.py.designs')
 import random
-from game_window import Ui_GameWindow
-from dictionary_window import Ui_DictionaryWindow
+from py_designs.game_window import Ui_GameWindow
+from py_designs.dictionary_window import Ui_DictionaryWindow
 from PyQt6.QtWidgets import QMainWindow
 
 
