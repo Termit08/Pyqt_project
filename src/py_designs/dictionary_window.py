@@ -15,7 +15,7 @@ class Ui_DictionaryWindow(object):
         self.sums = QtWidgets.QTextBrowser(parent=self.centralwidget)
         self.sums.setGeometry(QtCore.QRect(110, 110, 221, 611))
         self.sums.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.sums.setObjectName("sums")
+        self.sums.setObjectName("textBrowser_2")
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(130, 0, 141, 41))
         font = QtGui.QFont()
@@ -33,7 +33,8 @@ class Ui_DictionaryWindow(object):
         self.label_3.setObjectName("label_3")
         self.show_button = QtWidgets.QPushButton(parent=self.centralwidget)
         self.show_button.setGeometry(QtCore.QRect(80, 40, 201, 28))
-        self.show_button.setStyleSheet("background-color: rgb(212, 224, 255);")
+        self.show_button.setStyleSheet("background-color: rgb(212, 224, 255);\n"
+"color: rgb(0, 0, 0);")
         self.show_button.setObjectName("show_button")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
