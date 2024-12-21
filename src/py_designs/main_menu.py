@@ -24,14 +24,14 @@ class Ui_MainMenu(object):
         self.starting.setStyleSheet("background-color: rgb(255, 255, 255);\n"
         "\n"
         "font: 26pt \"Arial\";\n"
-        "border-color: rgb(0, 0, 0);\n"
+        "color: rgb(0, 0, 0);\n"
         "")
         self.starting.setObjectName("starting")
         self.instructions = QtWidgets.QPushButton(self.centralwidget)
         self.instructions.setGeometry(QtCore.QRect(100, 430, 531, 101))
         self.instructions.setStyleSheet("background-color: rgb(255, 255, 255);\n"
         "font: 26pt \"Arial\";\n"
-        "border-color: rgb(0, 0, 0);")
+        "color: rgb(0, 0, 0);")
         self.instructions.setObjectName("instructions")
         MainWindow.setCentralWidget(self.centralwidget)
         self.retranslateUi(MainWindow)
