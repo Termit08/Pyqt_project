@@ -39,7 +39,8 @@ class Ui_GameWindow(object):
         self.labe.setObjectName("labe")
         self.confirm_button = QtWidgets.QPushButton(parent=self.centralwidget)
         self.confirm_button.setGeometry(QtCore.QRect(600, 690, 191, 21))
-        self.confirm_button.setStyleSheet("background-color: rgb(212, 224, 255);")
+        self.confirm_button.setStyleSheet("background-color: rgb(212, 224, 255);\n"
+"color: rgb(0, 0, 0);")
         self.confirm_button.setObjectName("confirm_button")
         self.choice_for_offer = QtWidgets.QDialogButtonBox(parent=self.centralwidget)
         self.choice_for_offer.setGeometry(QtCore.QRect(570, 640, 221, 41))
@@ -48,7 +49,8 @@ class Ui_GameWindow(object):
         self.choice_for_offer.setObjectName("choice_for_offer")
         self.next_turn = QtWidgets.QPushButton(parent=self.centralwidget)
         self.next_turn.setGeometry(QtCore.QRect(550, 40, 261, 51))
-        self.next_turn.setStyleSheet("background-color: rgb(212, 224, 255);")
+        self.next_turn.setStyleSheet("background-color: rgb(212, 224, 255);\n"
+"color: rgb(0, 0, 0);")
         self.next_turn.setObjectName("next_turn")
         self.label_7 = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_7.setGeometry(QtCore.QRect(380, 640, 121, 51))
@@ -172,7 +174,8 @@ class Ui_GameWindow(object):
         self.num.setObjectName("num")
         self.give_number = QtWidgets.QPushButton(parent=self.centralwidget)
         self.give_number.setGeometry(QtCore.QRect(30, 10, 93, 91))
-        self.give_number.setStyleSheet("background-color: rgb(212, 224, 255);")
+        self.give_number.setStyleSheet("background-color: rgb(212, 224, 255);\n"
+"color: rgb(0, 0, 0);")
         self.give_number.setObjectName("give_number")
         self.label_6 = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_6.setGeometry(QtCore.QRect(30, 660, 231, 16))
@@ -184,7 +187,8 @@ class Ui_GameWindow(object):
         self.bank.setObjectName("bank")
         self.choice_for_change = QtWidgets.QDialogButtonBox(parent=self.centralwidget)
         self.choice_for_change.setGeometry(QtCore.QRect(570, 640, 221, 41))
-        self.choice_for_change.setStyleSheet("background-color: rgb(221, 224, 255);")
+        self.choice_for_change.setStyleSheet("background-color: rgb(221, 224, 255);\n"
+"color: rgb(0, 0, 0);")
         self.choice_for_change.setStandardButtons(QtWidgets.QDialogButtonBox.StandardButton.Cancel|QtWidgets.QDialogButtonBox.StandardButton.Ok)
         self.choice_for_change.setObjectName("choice_for_change")
         MainWindow.setCentralWidget(self.centralwidget)
